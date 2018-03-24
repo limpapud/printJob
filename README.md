@@ -1,85 +1,85 @@
 # printJob [![GitHub issues](https://img.shields.io/github/issues/limpapud/printJob.svg)](https://github.com/limpapud/printJob/issues) [![GitHub stars](https://img.shields.io/github/stars/limpapud/printJob.svg)](https://github.com/limpapud/printJob/stargazers) [![GitHub forks](https://img.shields.io/github/forks/limpapud/printJob.svg)](https://github.com/limpapud/printJob/network) [![GitHub license](https://img.shields.io/github/license/limpapud/printJob.svg)](https://github.com/limpapud/printJob/blob/master/LICENSE)
-![alt text](https://github.com/limpapud/printJob/blob/master/assets/demo/icon.PNG)
-
-### Qısa məlumat:
-
-**printJob** Windows ƏS üzərində istənilən kompyuterdən istənilən kompyuterə daxili şəbəkə və ya internet üzərindən çap verməyə imkan yaradır. Bu çap olunan sənədi birinci kompyuterdə növbəyə əlavə edib, ikinci kompyuterin özünə aid çap növbəsin periodik yoxlayıb çap verməsinin sayəsində baş verir.
-
-### İstifadə olunan kitabxanalar və dillər:
-
-- [Python 3.6]( https://www.python.org/downloads/release/python-360/) - sadə olduğu qədər güclü programlaşdırma dili.
-- [tkinker]( https://docs.python.org/3.0/library/tk.html) - Python üçün Tk QII əsasında qrafik interfeys.
-- Python daxilində olan [os]( https://docs.python.org/2/library/os.html) modulu əməliyyat sistemi funksiyalarının istifadəsi üçün nəzərdə tutulmuş modul.
-- [base64]( https://docs.python.org/2/library/base64.html) - RFC 3548 əsasında binar məlumatın şifrələmə/deşifrələmə modulu.
-- [uuid]( https://docs.python.org/2/library/uuid.html) - RFC 4122 əsasında universal unikal identifikator (UUID) yaradılması üçün modul.
-- [MySQLdb]( http://mysql-python.sourceforge.net/MySQLdb.html) - Python üçün MySQL TPİ.
-- [schedule]( https://schedule.readthedocs.io/en/stable/) - Prosses daxilində cədvəl üzrə periodik tapşırıqların icrası üçün modul..
-- [pythoncom]( http://timgolden.me.uk/pywin32-docs/pythoncom.html) - COM əsaslı interfeyslərin TPİ ilə işləmə üçün modul.
-- [threading]( https://docs.python.org/2/library/threading.html) - yüksək səviyyəli axın interfeysi.
-- [time]( https://docs.python.org/2/library/time.html) - müxtəlif vaxt ilə bağlı funksional.
-- [pywin32]( https://github.com/mhammond/pywin32) - Python üçün Windows əlavələri.
-- [pyinstaller]( https://www.pyinstaller.org/) - Python proqramı "donduran" və Windows/Linux/Mac OS X/FreeBSD/Solaris üçün Python-dan aslı olmayan yeqanə icra oluna bilən fayl yaradan modul.
-
-### printJOB ilə hal-hazırda mümkün tapşırıqlar:
-
-- *PDF və Word sənədlərin çapı*
-- *İnternet və daxili şəbəkə üzərindən çap*
-
-### İşləmə mexanizmi
-- Çap vermək üçün "printJOB Executor.exe" faylın icra edib pəncərədə siyahıdan kompyuteri seçərək faylı seçmək lazımdır. Çap verdikdə sənədin adı, çap olunacaq mağaza adı,çap statusu, tapşırığın yaradılma tarixi və saatı və sənədin özü haqqında məlumat MySQL məlumat bazasına daxil edilir.
-- Eyni zamanda işçi kompyuterində işləyən "printJOB CLient" icra faylı müəyyən periodiklik ilə (hər 2 dəqiqə) MySQL məlumat bazasın ona aid çap işlərin olub-olmadığını yoxlayır, öz "son aktiv" tarix-vaxtın yeniləyir. İş olduğu halda fayl həmən sistemdə olan standart printerdən çap olunur.
-- Eyni zamanda serverdə işləyən "printJOB Server" icra faylı müəyyən periodiklik ilə (hər 2 dəqiqə) MySQL məlumat bazasında son 5 dəqiqə ərzində aktiv olmamış (yəni branch_list.last_active sütununda özünə aid xananı yeniləməmiş) kompyuterlərin "branch_list.a_status"-un deaktivləşdirir.
-
-### Planlaşdırılan funksional:
-
-- **şəkil çapı** - hal-hazırda yalnız ".PDF"/".DOC"/".DOCX" çap vermək olsa da digər "JPG/JPEG/BMP/PNG" formatların əlavə olunması planlaşdırılır.
-- **işçi maşını verifikasiyası** - çap olunacaq maşının daha inkişaf olmuş verifikasiyası.
+###  [Məqaləni Azərbaycanca oxumaq]( https://github.com/limpapud/printJob/blob/master/README_AZ.md)
+![](https://github.com/limpapud/printJob/blob/master/assets/demo/icon.png)
 
 
-### Nümaiş
+### Brief information:
+
+**printJob** is a MS Windows supported software for printing from any PC to any PC across network and internet. It is possible as a result of queeing print job on from first PC , and periodically fetching and printing queued printing jobs from second PC.
+
+### Languages and libraries used:
+
+- [Python 3.6]( https://www.python.org/downloads/release/python-360/) - high-level programming language for general-purpose programming... but I do not think that this language needs any introduction.
+- [tkinker]( https://docs.python.org/3.0/library/tk.html) - Graphical interface for Python based on Tk GUI.
+- [os]( https://docs.python.org/2/library/os.html) - module provides a portable way of using operating system dependent functionality.
+- [base64]( https://docs.python.org/2/library/base64.html) - RFC 3548  based binary data encoding/decoding module.
+- [uuid]( https://docs.python.org/2/library/uuid.html) - RFC 4122 based UUID creating module.
+- [MySQLdb]( http://mysql-python.sourceforge.net/MySQLdb.html) - MySQL API for Python.
+- [schedule]( https://schedule.readthedocs.io/en/stable/) - In-process job schedulling module.
+- [pythoncom]( http://timgolden.me.uk/pywin32-docs/pythoncom.html) - Module for working with COM based interfaces.
+- [threading]( https://docs.python.org/2/library/threading.html) - high level threading interface.
+- [time]( https://docs.python.org/2/library/time.html) - various functions for operations with time.
+- [pywin32]( https://github.com/mhammond/pywin32) - Windows Extensions for Python.
+- [pyinstaller]( https://www.pyinstaller.org/) -Program that freezes (packages) Python programs into stand-alone executables, under Windows, Linux, Mac OS X, FreeBSD, Solaris and AIX.
+
+### Tasks accomplished by bot:
+
+- *PDF və Word document print*
+- *Print over internet and network*
+
+### Bot features:
+- Execute ***printJOB Executor.exe*** and select target PC, then browse file to print. After that filename,target PC name,print status,print job creation timestamp and file itself are placed in MySQL DB.
+- At the same time, executed ***"prinJOB Client.exe"*** will periodically (2 min by default) querry DB for jobs on computer runned on and updates *branch_list.last_active* column, and if there is some job, prints it on default printer.
+- Executed ***"printJOB Server.exe"*** with 2 minute period disables PC's what was inactive for more than 5 minutes (*branch_list.last_active* and *"branch_list.a_status"*).
+
+### Planned functionality:
+
+- **image print** - by now only ".PDF"/".DOC"/".DOCX" files are supported to print, "JPG/JPEG/BMP/PNG" format files are in planed functionality.
+- **workstation verification** - client workstation extended verification.
+
+
+### Demo
 ----------
 ![alt text](https://github.com/limpapud/printJob/blob/master/assets/demo/client.PNG)
 ![alt text](https://github.com/limpapud/printJob/blob/master/assets/demo/executor.PNG)
 
-Fayllar
+Files
 -------------------
-Mövcud faylların və qovluqların açığlaması aşağıdaki kimidir:
+Existing filed and descriptions are as below:
 
-Əsas qovluq:
+Main folder:
 
-> - *printJOBClient.py* - Kliyent kompyuteri üçün icra faylının kodu.
-> - *config.py* - sazlamaların saxlandığı fayl.
-> - *printJOBExecutor.py* - İcra edən kompyuter üçün icra faylının kodu.
-> - *printJOBServer.py* -  Tapşırıq icra edən server üçün icra faylının kodu.
-> - *FunctionsFile.py* -  Əsas funksiyalar olan fayl kodu.
-> - *createDB_structure.sql* -  Məlumat bazası strukturu.
+> - *printJOBClient.py* - Client for printing and pooling jobs.
+> - *config.py* - Configuration file.
+> - *printJOBExecutor.py* - CLient for creating print jobs.
+> - *printJOBServer.py* -  Server side executable for schedulled jobs execution.
+> - *FunctionsFile.py* -  File with essential functions
+> - *createDB_structure.sql* -  DB Structure.
 
-İştirak və tövhə vermə
+Contributions
 ----------------------
-Lahiyədə iştirak edib tövhə vermək istəyirsən? Əla! Bunun üçün **Fork** edib lahiyəni öz hesabınıza keçirib tövhələrinizi əlavə edib **Pull** sorğuların edə bilərsiniz.
+Want to contribute? That is great! Please **Fork** and **Pull** to main branch.
 
-> **Əlavələr:**
-> - Müəllif  istənilən həcmdə tövhəni dəyərləndirir.
-> - Təklif və iradları səhifə sonunda qeyd olumuş elektron ünvana və ya **Issues** -ə əlavə ilə qeyd edə bilərsiniz.
+> **Notes:**
+> - Author appreciates any size of contribution.
+> - Have some **Issues** or thoughts to share? You can share it via opening *Issue* or sending an  email that is mentioned in the end of page to author.
 
-
-İstifadə
+Usage and Licencing
 -------------
-Lahiyə **MIT** lisenziyası ilə yayımlanır.
-> **Bu deməkdir ki:**
-> - **Kommersiya** məqsədi ilə istifadə etmək **icazəniz var**
-> - Dəyişmək **icazəniz var**
-> - Yenidən bölüşmək **icazəniz var**
-> - Şəxsi məqsədlərdə istifadəyə **icazəniz var**
-> - Müəllif heç bir **zəmanət vermir**
-> - Müəllif heç bir **məhsuliyyət daşımır**
-> - İstifadə olunan zaman istifadə olunan lisenziya və müəllif hüquqları **qeyd olunmalıdır!**
+Project is distributed with **MIT** licence.
+> **That mean that:**
+> - This software and derivatives **may be used for commercial purposes**
+> - This software **may be modified**
+> - This software **may be distributed**
+> - This software **may be used and modified in private**
+> - This licence includes a **limitation of liability**
+> - This licence explicitly states that it **DOES NOT provide any warranty**
+> - A copy of the licence and copyright notice must be included with the software.
 
 
-### Əlaqə
+### Contact
 
-Müəllif ilə əlaqə [![](https://www.shareicon.net/data/16x16/2015/11/02/665918_email_512x512.png)](mailto:omarbayramov@hotmail.com) **omarbayramov@hotmail.com** elektron ünvan üzərindən aparıla bilər.
-Əlavə olaraq sosial şəbəkə və digər saytlara linklər əlavə olunur.
+You can contact with author through [![](https://www.shareicon.net/data/16x16/2015/11/02/665918_email_512x512.png)](mailto:omarbayramov@hotmail.com) **omarbayramov@hotmail.com** mail.
+Additionaly I am adding links to social network accounts and blog.
 
-[Facebook![](https://www.shareicon.net/data/32x32/2016/06/20/606800_facebook_48x48.png)](https://www.facebook.com/Omar.X.Bayramov)
-[Wordpress![](https://www.shareicon.net/data/32x32/2016/07/14/606997_wordpress_64x64.png)](https://omarbayramov.wordpress.com/) [LinkedIn![](https://www.shareicon.net/data/32x32/2016/06/20/606446_linkedin_48x48.png)](https://www.linkedin.com/in/omarbayramov/)
+[Facebook![](https://www.shareicon.net/data/32x32/2016/06/20/606800_facebook_48x48.png)](https://www.facebook.com/Omar.X.Bayramov) [Wordpress![](https://www.shareicon.net/data/32x32/2016/07/14/606997_wordpress_64x64.png)](https://omarbayramov.wordpress.com/) [LinkedIn![](https://www.shareicon.net/data/32x32/2016/06/20/606446_linkedin_48x48.png)](https://www.linkedin.com/in/omarbayramov/)
