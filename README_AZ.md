@@ -1,5 +1,6 @@
 # printJob [![GitHub issues](https://img.shields.io/github/issues/limpapud/printJob.svg)](https://github.com/limpapud/printJob/issues) [![GitHub stars](https://img.shields.io/github/stars/limpapud/printJob.svg)](https://github.com/limpapud/printJob/stargazers) [![GitHub forks](https://img.shields.io/github/forks/limpapud/printJob.svg)](https://github.com/limpapud/printJob/network) [![GitHub license](https://img.shields.io/github/license/limpapud/printJob.svg)](https://github.com/limpapud/printJob/blob/master/LICENSE)
-![alt text](https://github.com/limpapud/printJob/blob/master/assets/demo/icon.PNG)
+![](https://github.com/limpapud/printJob/blob/master/assets/demo/icon.png)
+
 
 ### Qısa məlumat:
 
