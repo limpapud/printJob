@@ -1,11 +1,6 @@
 # printJob [![GitHub issues](https://img.shields.io/github/issues/limpapud/printJob.svg)](https://github.com/limpapud/printJob/issues) [![GitHub stars](https://img.shields.io/github/stars/limpapud/printJob.svg)](https://github.com/limpapud/printJob/stargazers) [![GitHub forks](https://img.shields.io/github/forks/limpapud/printJob.svg)](https://github.com/limpapud/printJob/network) [![GitHub license](https://img.shields.io/github/license/limpapud/printJob.svg)](https://github.com/limpapud/printJob/blob/master/LICENSE)
-<<<<<<< HEAD
 ###  [Məqaləni Azərbaycanca oxumaq]( https://github.com/limpapud/printJob/blob/master/README_AZ.md)
 ![](https://github.com/limpapud/printJob/blob/master/assets/demo/icon.png)
-=======
-![](https://github.com/limpapud/printJob/blob/master/assets/demo/icon.png)
-
->>>>>>> 741804a01f906ab5f061cd122a2de54dc04791f7
 
 
 ### Brief information:
@@ -87,9 +82,4 @@ Project is distributed with **MIT** licence.
 You can contact with author through [![](https://www.shareicon.net/data/16x16/2015/11/02/665918_email_512x512.png)](mailto:omarbayramov@hotmail.com) **omarbayramov@hotmail.com** mail.
 Additionaly I am adding links to social network accounts and blog.
 
-<<<<<<< HEAD
 [Facebook![](https://www.shareicon.net/data/32x32/2016/06/20/606800_facebook_48x48.png)](https://www.facebook.com/Omar.X.Bayramov) [Wordpress![](https://www.shareicon.net/data/32x32/2016/07/14/606997_wordpress_64x64.png)](https://omarbayramov.wordpress.com/) [LinkedIn![](https://www.shareicon.net/data/32x32/2016/06/20/606446_linkedin_48x48.png)](https://www.linkedin.com/in/omarbayramov/)
-=======
-[Facebook![](https://www.shareicon.net/data/32x32/2016/06/20/606800_facebook_48x48.png)](https://www.facebook.com/Omar.X.Bayramov)
-[Wordpress![](https://www.shareicon.net/data/32x32/2016/07/14/606997_wordpress_64x64.png)](https://omarbayramov.wordpress.com/) [LinkedIn![](https://www.shareicon.net/data/32x32/2016/06/20/606446_linkedin_48x48.png)](https://www.linkedin.com/in/omarbayramov/)
->>>>>>> 741804a01f906ab5f061cd122a2de54dc04791f7
