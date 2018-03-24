@@ -10,14 +10,17 @@ from win32com import client
 import time
 
 def fileUpload(filePath):
+    """Function takes path to file as an input, encodes in Base64 and returns blob of a file"""
     with open(filePath, 'rb') as f:
         blob = base64.b64encode(f.read())
     return blob
 
 def QuerryUI(querry,a):
+    """Update/Insert DB function.
+
+    Takes Querry and parameters as an input and executes query"""
     try:
         conn = MySQLdb.connect(config.mysql_host,config.mysql_username,config.mysql_password,config.mysql_db,charset = config.mysql_encode)
-
         c = conn.cursor()
         c.execute(querry, a)
         conn.commit()
@@ -26,6 +29,9 @@ def QuerryUI(querry,a):
         print("Something went wrong right in inserting into DB")
 
 def QuerryS(querry,a):
+    """SELECT DB function.
+
+    Takes Querry and parameters as an input and executes query. Returns querry output as a result"""
     try:
         conn = MySQLdb.connect(config.mysql_host,config.mysql_username,config.mysql_password,config.mysql_db,charset = config.mysql_encode)
         c = conn.cursor()
@@ -37,12 +43,19 @@ def QuerryS(querry,a):
         print("Something went wrong right in selecting from DB")
 
 def insertJob(ShopName,fileLocation):
+    """Print Job inserting function
+
+    Takes PC name and File location in input, turns file to a blob and inserts 'fileLocation`,`ShopName`,`printStatus`,`creationDate`,`fileBlob' to DB
+    """
     blobfile=fileUpload(fileLocation)
     a=(fileLocation,ShopName,blobfile)
     qry="""INSERT INTO `printQueue`(`fileLocation`,`ShopName`,`printStatus`,`creationDate`,`fileBlob`) VALUES (%s,%s,'0',CURRENT_TIMESTAMP,%s)"""
     QuerryUI(qry,a)
 
 def deactShopJob():
+    """PC deactivation Function
+    Executes deactivationd of PCs that are inactive for more that active timeout treshhold
+    """
     a=(config.client_deact_timeout,)
     qry="""UPDATE branch_list SET a_status = 0 WHERE last_active < DATE_SUB(NOW(),INTERVAL %s MINUTE_SECOND)"""
     QuerryUI(qry,a)
@@ -53,6 +66,7 @@ def updateJob(ShopName,fileLocation): #ToDO add filter for Today date, maybe BLO
     QuerryUI(qry,a)
 
 def ListActiveShops(dig):
+    """Function recieves status type and outputs all PCs that are in that filter. Used to show active PC list"""
     list=[]
     try:
         a=(dig,)
