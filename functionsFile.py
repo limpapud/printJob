@@ -88,6 +88,13 @@ def updateShopActive():
     qry="""UPDATE branch_list SET last_active = CURRENT_TIMESTAMP,a_status='1'  WHERE branch_name = %s"""
     QuerryUI(qry,a)
 
+def checkInBranch():
+    """Takes branch_name as an input and registers branch in general branch list."""
+    qry = """INSERT INTO branch_list (branch_name,a_status,last_active) VALUES (%s,"1",NOW()) ON DUPLICATE KEY UPDATE a_status=VALUES(a_status), last_active=VALUES(last_active)"""
+    a=(os.environ['COMPUTERNAME'],)
+    QuerryUI(qry,a)
+
+
 
 def checkJob(dig):
     try:
@@ -151,7 +158,7 @@ def printPDF(finepath):
 def run_schedule():
     import pythoncom
     pythoncom.CoInitialize()
-    schedule.every(150).seconds.do(mass_job)
+    schedule.every(config.mass_job_queue).seconds.do(mass_job)
     while True:
         schedule.run_pending()
         time.sleep(120)

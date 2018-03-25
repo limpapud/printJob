@@ -37,6 +37,12 @@
 - **image print** - by now only ".PDF"/".DOC"/".DOCX" files are supported to print, "JPG/JPEG/BMP/PNG" format files are in planed functionality.
 - **workstation verification** - client workstation extended verification.
 
+### Packing *.py* to '.exe' with PyInstaller:
+```%path_to_python.exe%>pyinstaller --noconsole --onefile printJOBCLient.py
+```
+
+> - *--noconsole* - to hide console at executable execution
+> - *--onefile* - to pack executable in one file
 
 ### Demo
 ----------

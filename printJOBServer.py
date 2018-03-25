@@ -8,5 +8,3 @@ def run_schedule():
         schedule.run_pending()
         time.sleep(150)
 run_schedule()
-
-run_schedule()

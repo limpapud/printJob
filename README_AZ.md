@@ -36,6 +36,12 @@
 - **şəkil çapı** - hal-hazırda yalnız ".PDF"/".DOC"/".DOCX" çap vermək olsa da digər "JPG/JPEG/BMP/PNG" formatların əlavə olunması planlaşdırılır.
 - **işçi maşını verifikasiyası** - çap olunacaq maşının daha inkişaf olmuş verifikasiyası.
 
+### *.py* faylın '.exe' faylına PyInstaller vasitəsi ilə keçirilməsi:
+```%python.exe_olan_qovluq%>pyinstaller --noconsole --onefile printJOBCLient.py
+```
+
+> - *--noconsole* - proqram işləyən zaman konsolu qizlətmək üçün
+> - *--onefile* - bir fayla çevirmək
 
 ### Nümaiş
 ----------

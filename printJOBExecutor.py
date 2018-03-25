@@ -5,13 +5,14 @@ from threading import Thread
 import time
 import pythoncom
 pythoncom.CoInitialize()
-schedule.every(120).seconds.do(mass_job)
 master = Tk()
 master.title("printJOB (Alpha) Client")
+master.geometry('500x100')
+master.resizable(False, False)
 variable = StringVar(master)
+checkInBranch()
 def checkQueue():
-    schedule.Job.do(mass_job)
-    time.sleep(2)
+    mass_job()
     return
 thread = Thread(target = run_schedule)
 thread.start()
@@ -26,8 +27,7 @@ text = Text(master)
 text.insert(INSERT, "Proqramı bağlamaq üçün 'Bağla' tıklayın \nBaş osifdən çap növbəsin yoxlamaq üçün 'Çapı yoxla' tıklayın")
 text.place(x=10,y=30)
 text.pack()
-master.geometry('500x100')
-master.resizable(False, False)
+
 mainloop()
 
 
