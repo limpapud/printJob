@@ -143,7 +143,7 @@ def printAndCheckJob(): #add PDF and WORD file check
             printWord(fileFetch(blob,ext))
             print('print WORD')
         else:
-            print('xuy znayet')
+            print('Unknown')
         updateJob(os.environ['COMPUTERNAME'],each[0])
 
 def printPDF(finepath):
